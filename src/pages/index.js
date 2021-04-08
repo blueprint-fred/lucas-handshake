@@ -11,11 +11,13 @@ import fb from '../icons/facebook.svg';
 import tw from '../icons/twitter.svg';
 import yt from '../icons/youtube.svg';
 import ln from '../icons/linkedin.svg';
+import {ProgressSteps, NumberedStep} from 'baseui/progress-steps';
 
 const Index = () => {
     const [value, setValue] = useState("");
     const [option, setOption] = useState("1");
     const [errorMessage, setErrorMessage] = useState("");
+    const [current, setCurrent] = useState(0);
 
     return (
         <>
@@ -78,7 +80,7 @@ const Index = () => {
             </MDBRow>
             <MDBRow className="py-4">
                 <MDBCol>
-                    <Button endEnhancer={() => <ArrowRight size={24} />}>
+                    <Button onClick={()=>setCurrent(1)} type="button" endEnhancer={() => <ArrowRight size={24} />}>
                         Next Step
                     </Button>
                 </MDBCol>
@@ -95,7 +97,7 @@ const Index = () => {
             </MDBRow>
             <MDBRow className="py-2">
                 <MDBCol>
-                    <Button endEnhancer={() => <ArrowRight size={24} />}>
+                    <Button type="button" endEnhancer={() => <ArrowRight size={24} />}>
                         Next Step
                     </Button>
                 </MDBCol>
@@ -126,9 +128,14 @@ const Index = () => {
             </MDBRow>
             <MDBRow className="py-2">
                 <MDBCol>
-                    <Button endEnhancer={() => <ArrowRight size={24} />}>
+                    <Button type="button" endEnhancer={() => <ArrowRight size={24} />}>
                         Next Step
                     </Button>
+                </MDBCol>
+            </MDBRow>
+            <MDBRow>
+                <MDBCol>
+                    <h3 className="h3-responsive font-weight-bold">Publishing content</h3>
                 </MDBCol>
             </MDBRow>
             <MDBRow className="py-4">
@@ -151,7 +158,7 @@ const Index = () => {
             </MDBRow>
             <MDBRow className="py-2">
                 <MDBCol>
-                    <Button endEnhancer={() => <ArrowRight size={24} />}>
+                    <Button type="submit" endEnhancer={() => <ArrowRight size={24} />}>
                         Initiate Handshake
                     </Button>
                 </MDBCol>
