@@ -19,15 +19,19 @@ const Index = () => {
     const [errorMessage, setErrorMessage] = useState("");
     const [current, setCurrent] = useState(0);
 
+    const alert = () => setErrorMessage('Error')
+
     return (
         <>
+        <ProgressSteps current={current}>
         <MDBContainer className="my-5 py-5">
-            <MDBRow>
+            <MDBRow onClick={alert()}>
                 <MDBCol>
                     <h3 className="h3-responsive font-weight-bold">Personal Information</h3>
                 </MDBCol>
             </MDBRow>
             <form className="py-4" action="">
+            <NumberedStep title="Create Account">
             <MDBRow>
                 <MDBCol md="8" lg="8">
                     <MDBRow className="py-2">
@@ -85,6 +89,8 @@ const Index = () => {
                     </Button>
                 </MDBCol>
             </MDBRow>
+            </NumberedStep>
+            <NumberedStep title="Content Management">
             <MDBRow>
                 <MDBCol>
                     <h3 className="h3-responsive font-weight-bold">Upload Content</h3>
@@ -97,11 +103,12 @@ const Index = () => {
             </MDBRow>
             <MDBRow className="py-2">
                 <MDBCol>
-                    <Button type="button" endEnhancer={() => <ArrowRight size={24} />}>
+                    <Button onClick={()=>setCurrent(2)} type="button" endEnhancer={() => <ArrowRight size={24} />}>
                         Next Step
                     </Button>
                 </MDBCol>
             </MDBRow>
+            </NumberedStep>
             <MDBRow>
                 <MDBCol>
                     <h3 className="h3-responsive font-weight-bold">Choosing a template</h3>
@@ -165,6 +172,7 @@ const Index = () => {
             </MDBRow>
             </form>
         </MDBContainer>
+         </ProgressSteps>
         </>
     )
 }

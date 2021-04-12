@@ -7,7 +7,9 @@ const App = () => {
   return (
     <Router>
       <Navbar/>
-      <Route exact path="/" component={Index}/>
+      <Switch>
+        <Route exact path="/" component={Index}/>
+      </Switch>
     </Router>
   )
 }
