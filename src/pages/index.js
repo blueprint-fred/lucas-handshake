@@ -164,22 +164,22 @@ const Index = () => {
                     <MDBCol md="8" lg="8">
                         <MDBRow>
                             <MDBCol md="3" lg="3">
-                                <FacebookShareButton onShareWindowClose={()=>setSuccess(true)} url={`urlhere#`}>
+                                <FacebookShareButton onShareWindowClose={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={fb} alt=""/>
                                 </FacebookShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <LinkedinShareButton openShareDialogOnClick={()=>setSuccess(true)} url={`urlhere#`}>
+                                <LinkedinShareButton openShareDialogOnClick={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={ln} alt=""/>
                                 </LinkedinShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <TwitterShareButton url={`#urlhere`}>
+                                <TwitterShareButton url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={tw} alt=""/>
                                 </TwitterShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <InstapaperShareButton url={`#urlhere`}>
+                                <InstapaperShareButton url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={ig} alt=""/>
                                 </InstapaperShareButton>
                             </MDBCol>
