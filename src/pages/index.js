@@ -54,7 +54,12 @@ const Index = () => {
             <ProgressSteps       
             overrides={{
             Content: {
-            style: ({ $theme }) => ({ width: `1000px` })
+            style: ({ $theme }) => ({ 
+                width: `1000px`,
+                    "@media screen and (max-width: 540px)":{
+                        width: `200px`
+                    }
+                })
             }
         }} current={current}>
             <NumberedStep title="Personal Information">
@@ -64,7 +69,7 @@ const Index = () => {
                 <MDBRow>
                     <MDBCol md="8" lg="8">
                         <MDBRow className="py-2">
-                        <MDBCol md="6" lg="6">
+                        <MDBCol className="py-lg-0 py-md-0 py-2" md="6" lg="6">
                             <Input
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
@@ -72,7 +77,7 @@ const Index = () => {
                                 clearOnEscape
                             />
                         </MDBCol>
-                        <MDBCol md="6" lg="6">
+                        <MDBCol className="py-lg-0 py-md-0 py-2" md="6" lg="6">
                             <Input
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
@@ -82,7 +87,7 @@ const Index = () => {
                         </MDBCol>
                     </MDBRow>
                     <MDBRow className="py-2">
-                        <MDBCol md="6" lg="6">
+                        <MDBCol className="py-lg-0 py-md-0 py-2" md="6" lg="6">
                             <Input
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
@@ -90,7 +95,7 @@ const Index = () => {
                                 clearOnEscape
                             />
                         </MDBCol>
-                        <MDBCol md="6" lg="6">
+                        <MDBCol className="py-lg-0 py-md-0 py-2" md="6" lg="6">
                             <Input
                                 value={value}
                                 onChange={e => setValue(e.target.value)}
@@ -163,22 +168,22 @@ const Index = () => {
                 <MDBRow className="py-4">
                     <MDBCol md="8" lg="8">
                         <MDBRow>
-                            <MDBCol md="3" lg="3">
+                            <MDBCol className="py-2 py-lg-0 py-md-0" size="6" md="3" lg="3">
                                 <FacebookShareButton onShareWindowClose={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={fb} alt=""/>
                                 </FacebookShareButton>
                             </MDBCol>
-                            <MDBCol md="3" lg="3">
+                            <MDBCol className="py-2 py-lg-0 py-md-0" size="6" md="3" lg="3">
                                 <LinkedinShareButton openShareDialogOnClick={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={ln} alt=""/>
                                 </LinkedinShareButton>
                             </MDBCol>
-                            <MDBCol md="3" lg="3">
+                            <MDBCol className="py-2 py-lg-0 py-md-0" size="6" md="3" lg="3">
                                 <TwitterShareButton url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={tw} alt=""/>
                                 </TwitterShareButton>
                             </MDBCol>
-                            <MDBCol md="3" lg="3">
+                            <MDBCol className="py-2 py-lg-0 py-md-0" size="6" md="3" lg="3">
                                 <InstapaperShareButton url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={ig} alt=""/>
                                 </InstapaperShareButton>
