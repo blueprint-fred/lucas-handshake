@@ -131,14 +131,14 @@ const Index = () => {
                     name="number"
                     align={ALIGN.vertical}
                 >
-                    <Radio value="1">One</Radio>
+                    <Radio value="1" description="Simple and elegant template">Minimalist Template</Radio>
                     <Radio
                         value="2"
-                        description="This is a radio description"
+                        description="Design with illustrations template"
                     >
-                        Two
+                        Illustrative Template
                     </Radio>
-                    <Radio value="3">Three</Radio>
+                    <Radio value="3" description="More on words and information template">Informative Template</Radio>
                 </RadioGroup>
                 <SpacedButton onClick={() => setCurrent(0)}>
                 Previous
