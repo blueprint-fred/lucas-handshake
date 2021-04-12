@@ -7,12 +7,13 @@ import {Button, SHAPE, KIND, SIZE} from 'baseui/button';
 import { FileUploader } from "baseui/file-uploader";
 import { RadioGroup, Radio, ALIGN } from "baseui/radio";
 import fb from '../icons/facebook.svg';
-// import ig from '../icons/instagram.svg';
+import ig from '../icons/instagram.svg';
 import tw from '../icons/twitter.svg';
-import yt from '../icons/youtube.svg';
+// import yt from '../icons/youtube.svg';
 import ln from '../icons/linkedin.svg';
 import {ProgressSteps, NumberedStep} from 'baseui/progress-steps';
 import {useStyletron} from 'baseui';
+import {FacebookShareButton, LinkedinShareButton, TwitterShareButton, InstapaperShareButton} from 'react-share'
 
 function SpacedButton(props) {
     return (
@@ -38,8 +39,14 @@ const Index = () => {
     const [value, setValue] = useState("");
     const [option, setOption] = useState("1");
     const [errorMessage] = useState("");
+    const [sucess, setSuccess] = useState(false);
     const [current, setCurrent] = useState(0);
     const [css, theme] = useStyletron();
+
+    const sucessProps = {
+        disabled: sucess ? true : false
+    }
+
     return (
         <>
         <MDBContainer className="py-5 my-5">
@@ -157,16 +164,24 @@ const Index = () => {
                     <MDBCol md="8" lg="8">
                         <MDBRow>
                             <MDBCol md="3" lg="3">
-                                <img className="clickable" src={fb} alt=""/>
+                                <FacebookShareButton onShareWindowClose={()=>setSuccess(true)} url={`urlhere#`}>
+                                    <img className="clickable" src={fb} alt=""/>
+                                </FacebookShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <img className="clickable" src={ln} alt=""/>
+                                <LinkedinShareButton openShareDialogOnClick={()=>setSuccess(true)} url={`urlhere#`}>
+                                    <img className="clickable" src={ln} alt=""/>
+                                </LinkedinShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <img className="clickable" src={tw} alt=""/>
+                                <TwitterShareButton url={`#urlhere`}>
+                                    <img className="clickable" src={tw} alt=""/>
+                                </TwitterShareButton>
                             </MDBCol>
                             <MDBCol md="3" lg="3">
-                                <img className="clickable" src={yt} alt=""/>
+                                <InstapaperShareButton url={`#urlhere`}>
+                                    <img className="clickable" src={ig} alt=""/>
+                                </InstapaperShareButton>
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
@@ -174,7 +189,7 @@ const Index = () => {
                 <SpacedButton onClick={()=>setCurrent(2)}>
                 Previous
                 </SpacedButton>
-                <SpacedButton disabled type="submit" endEnhancer={() => <ArrowRight size={24} />}>
+                <SpacedButton {...sucessProps} type="submit" endEnhancer={() => <ArrowRight size={24} />}>
                     Initiate Handshake
                 </SpacedButton>
             </NumberedStep>
