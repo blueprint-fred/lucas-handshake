@@ -25,6 +25,11 @@ const ContactPage = () => {
         isLoading: loading ? true : false
     }
 
+    const closeToast = () => {
+        toaster.clear(toastKey);
+        setToastKey(null);
+      };
+
     const onSubmit = e => {
         e.preventDefault();
         setLoading(true);
@@ -48,7 +53,7 @@ const ContactPage = () => {
 
     return (
         <MDBContainer className="py-5 my-5">
-        <ToasterContainer autoHideDuration={1000}>
+        <ToasterContainer onClick={closeToast} autoHideDuration={1000}>
             <MDBRow>
                 <MDBCol>
                     <h2 className="h2-responsive font-weight-bold">Need to talk?</h2>
