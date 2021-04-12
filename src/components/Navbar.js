@@ -13,19 +13,19 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNav
             <MDBNavbarToggler onClick={()=>setCollapse(!collapse)} />
             <MDBCollapse id="navbarCollapse3" isOpen={collapse} navbar>
             <MDBNavbarNav right>
-                <MDBNavItem className="px-4">
+                <MDBNavItem className="px-lg-4 px-md-4 px-0">
                     <MDBNavLink to="/">Home</MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem className="px-4">
+                <MDBNavItem className="px-lg-4 px-md-4 px-0">
                     <MDBNavLink to="/about">About</MDBNavLink>
                 </MDBNavItem>
-                <MDBNavItem className="px-4">
+                <MDBNavItem className="px-lg-4 px-md-4 px-0">
                     <MDBNavLink to="/contact">Contact</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                <MDBDropdown className="px-4">
+                <MDBDropdown className="px-lg-4 px-md-4 px-0">
                     <MDBDropdownToggle nav caret>
-                    <div className="d-none d-md-inline">Apps</div>
+                    <div className="d-lg-inline d-inline d-md-inline">Apps</div>
                     </MDBDropdownToggle>
                     <MDBDropdownMenu className="dropdown-default">
                     <MDBDropdownItem href="#!">Dojo</MDBDropdownItem>
