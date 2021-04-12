@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { Input } from "baseui/input";
 import { MDBCol, MDBContainer, MDBRow } from 'mdbreact';
 import { Textarea } from "baseui/textarea";
@@ -39,10 +39,21 @@ const Index = () => {
     const [value, setValue] = useState("");
     const [option, setOption] = useState("1");
     const [errorMessage] = useState("");
+    const [isUploading, setIsUploading] = useState(false);
     const [sucess, setSuccess] = useState(false);
     const [current, setCurrent] = useState(0);
     const [css, theme] = useStyletron();
+    const timeoutId = useRef(null)
 
+    const reset = () => {
+        setIsUploading(false);
+        clearTimeout(timeoutId.current);
+    }
+
+    const startProgress = () => {
+        setIsUploading(true);
+        timeoutId.current = setTimeout(reset, 4000);
+    }
     const sucessProps = {
         disabled: sucess ? true : false
     }
@@ -153,7 +164,16 @@ const Index = () => {
                 </div>
                 <MDBRow className="py-4">
                     <MDBCol md="8" lg="8">
-                        <FileUploader errorMessage={errorMessage} />
+                        <FileUploader 
+                            onCancel={reset}
+                            onDrop={(acceptedFiles, rejectedFiles) => {
+                                // handle file upload...
+                                startProgress();
+                            }}
+                            progressMessage={
+                                isUploading ? `Uploading... hang tight.` : ''
+                            }
+                            errorMessage={errorMessage} />
                     </MDBCol>
                 </MDBRow>
                 <SpacedButton onClick={() => setCurrent(1)}>
