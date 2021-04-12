@@ -14,13 +14,13 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNav
             <MDBCollapse id="navbarCollapse3" isOpen={collapse} navbar>
             <MDBNavbarNav right>
                 <MDBNavItem className="px-4">
-                    <MDBNavLink to="#!">Home</MDBNavLink>
+                    <MDBNavLink to="/">Home</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem className="px-4">
-                    <MDBNavLink to="#!">About</MDBNavLink>
+                    <MDBNavLink to="/about">About</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem className="px-4">
-                    <MDBNavLink to="#!">Contact</MDBNavLink>
+                    <MDBNavLink to="/contact">Contact</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
                 <MDBDropdown className="px-4">

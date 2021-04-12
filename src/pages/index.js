@@ -16,16 +16,14 @@ import {ProgressSteps, NumberedStep} from 'baseui/progress-steps';
 const Index = () => {
     const [value, setValue] = useState("");
     const [option, setOption] = useState("1");
-    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage] = useState("");
     const [current, setCurrent] = useState(0);
-
-    const alert = () => setErrorMessage('Error')
 
     return (
         <>
         <ProgressSteps current={current}>
         <MDBContainer className="my-5 py-5">
-            <MDBRow onClick={alert()}>
+            <MDBRow>
                 <MDBCol>
                     <h3 className="h3-responsive font-weight-bold">Personal Information</h3>
                 </MDBCol>
