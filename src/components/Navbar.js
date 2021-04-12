@@ -28,10 +28,10 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNav
                     <div className="d-lg-inline d-inline d-md-inline">Apps</div>
                     </MDBDropdownToggle>
                     <MDBDropdownMenu className="dropdown-default">
-                    <MDBDropdownItem href="#!">Dojo</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">Zen Garden</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">Devasuki</MDBDropdownItem>
-                    <MDBDropdownItem href="#!">AIT</MDBDropdownItem>
+                    <MDBDropdownItem href="#dojolinkhere">Dojo</MDBDropdownItem>
+                    <MDBDropdownItem href="#zenlinkhere">Zen Garden</MDBDropdownItem>
+                    <MDBDropdownItem href="#devasukilinkhere">Devasuki</MDBDropdownItem>
+                    <MDBDropdownItem href="#aitlinkhere">AIT</MDBDropdownItem>
                     </MDBDropdownMenu>
                 </MDBDropdown>
                 </MDBNavItem>
