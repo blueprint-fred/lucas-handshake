@@ -189,7 +189,7 @@ const Index = () => {
                     <MDBCol md="8" lg="8">
                         <MDBRow>
                             <MDBCol className="py-2 py-lg-0 py-md-0" size="6" md="3" lg="3">
-                                <FacebookShareButton onShareWindowClose={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
+                                <FacebookShareButton openShareDialogOnClick={()=>setSuccess(true)} url={`https://stream.mux.com/eMVdTuBU01rRqbyYEvAcZygJHNDJl01v502.m3u8`}>
                                     <img className="clickable" src={fb} alt=""/>
                                 </FacebookShareButton>
                             </MDBCol>
